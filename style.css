@@ -1,0 +1,32 @@
+h1{
+	text-align: center;	
+	font-family: Verdana;
+}
+#fb{
+	width: 71%;
+    margin: 0 auto;
+}
+.box{
+	margin: 3px;
+	display: inline-block;
+	height:150px;
+	width: 150px;
+	border-radius: 10px;
+	text-align: center;
+	vertical-align: middle; 
+	font-size: 30px;	
+	font-family: Verdana;
+	color: white;
+}
+.num{
+	background-color: #FFCC00;
+}
+.fizz{
+	background-color: #3333FF;
+}
+.buzz{
+	background-color: #99FF00;
+}
+.fizzbuzz{
+	background-color: #CC0000;
+}
