@@ -1,35 +1,31 @@
-var times = prompt("Enter a number to count to", "100");
+(function() {
+	var app = angular.module('FizzedBuzzed', []);
 
-var text;
-var x = document.getElementById("fb");
+	app.controller('FizzController', function(){
+	this.boxes = fbBoxes;
+	});
 
-for (var i = 1; i <= times; i++) {
+	var times = prompt("Enter a number to count to", "100");
 
-	var element = document.createElement("DIV");
-	element.className = "box";
+	var fbBoxes = [];
 
-	if(i % 3 === 0 & i % 5 ===0)	
-	{
-		element.classList.add("fizzbuzz");
-		text = document.createTextNode("FIZZ\nBUZZ");
+	for (var i = 1; i <= times; i++) {
+
+		if(i % 3 === 0 & i % 5 ===0)	
+		{
+			fbBoxes.push({name: 'FIZZ\nBUZZ', class: 'fizzbuzz'});
+		}
+		else if(i % 3 === 0)
+		{
+			fbBoxes.push({name: 'FIZZ', class: 'fizz'});
+		}
+		else if (i % 5 ===0)
+		{
+			fbBoxes.push({name: 'BUZZ', class: 'buzz'});
+		}
+		else
+		{
+			fbBoxes.push({name: i, class: 'num'});
+		}
 	}
-	else if(i % 3 === 0)
-	{
-		element.classList.add("fizz");
-    	text = document.createTextNode("FIZZ");
-	}
-	else if (i % 5 ===0)
-	{
-		element.classList.add("buzz");
-		text = document.createTextNode("BUZZ");
-	}
-	else
-	{
-		element.classList.add("num");
-		text = document.createTextNode(i);
-	}
-
-    element.appendChild(text);
-    console.log(text);	
-    x.appendChild(element);
-}
+})();

@@ -1,13 +1,17 @@
-<html>
+<html ng-app="FizzedBuzzed">
 <head>
 	<link rel="stylesheet" type="text/css" href="style.css">
+	<script type="text/javascript" src="angular.min.js"></script>
+    <script type="text/javascript" src="fizzbuzz.js"></script>
 	<title>Fizz Buzz</title>
 </head>
 <body>
 	<h1>Kev's FizzBuzz</h1>
 
-	<div id="fb"></div>
+	<div id="fb" ng-controller="FizzController as fizz">
 
-	<script src="fizzbuzz.js"></script>
+		<div ng-repeat="box in fizz.boxes" class="box {{box.class}}">{{box.name}}</div>
+
+	</div>
 </body>
 </html>
